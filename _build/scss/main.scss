@@ -1,0 +1,74 @@
+/*****************
+IMPORTS
+*****************/
+
+@import 'bourbon';
+@import 'neat';
+
+
+/*****************
+VARIABLES
+*****************/
+//$tiny: new-breakpoint(max-width 550px 4);
+$mobile: new-breakpoint(max-width 768px 4);
+//$tablet: new-breakpoint(max-width 768px 8);
+$laptop: new-breakpoint(max-width 1024px 12);
+$footer: #393c41;
+$link-hover: #d1d0cb;
+$link-click: #fff;
+$font-color: #f2f1ed;
+$font1: 'Montserrat', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif ;
+$bg: #262d36;
+$bg2: #eee;
+
+
+/*****************
+GLOBALS
+*****************/
+
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 14px;
+}
+
+body {
+  font-family: $font1;
+  color: $font-color;
+  margin: 0 5%;
+  padding: 0;
+  background-color: $bg;
+}
+
+.container {
+ height: auto;
+ @include outer-container;
+}
+
+.main-heading{
+  @include span-columns(4);
+  @include shift(4);
+  @include media($mobile){
+    font-size: 0.5em;
+    text-align: center;
+    @include span-columns(4);
+    @include shift(0);
+  }
+}
+
+.left-content {
+  @include span-columns(5);
+  @include media($mobile){
+    @include span-columns(4);
+  }
+}
+
+.right-content {
+  @include span-columns(5);
+  @include shift(2);
+  @include media($mobile){
+    @include span-columns(4);
+    @include shift(0);
+  }
+}
